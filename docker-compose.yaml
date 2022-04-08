@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+      target: production
+    container_name: app
+    expose:
+      - '4000'
+    ports:
+      - '4000:4000'
+    command: node bin/index.js
